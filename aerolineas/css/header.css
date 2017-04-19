@@ -1,0 +1,77 @@
+/**
+Header
+*/
+
+#general-header {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .24);
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+
+/**
+Logo Styles
+*/
+
+
+/**
+Upper menu styles 
+*/
+
+.upper-header {
+    color: #777777;
+}
+
+.upper-header .upper-nav {
+    font-size: 15px;
+}
+
+.upper-header .upper-nav ul li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.upper-header .upper-nav ul:last-child li {
+    padding-right: 0;
+}
+
+.row.upper-header .cols {
+    padding-right: 0;
+}
+
+
+/**
+Down header styles
+*/
+
+.down-header {
+    border-top: solid 1px #0079ca;
+    margin-top: 10px;
+    color: #0079ca;
+    font-size: 14px;
+}
+
+.down-header nav {
+    line-height: 50px;
+}
+
+.down-header nav.md-12,
+.down-header nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.down-header nav ul li {
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    width: 20%;
+    text-align: center;
+}
+
+.down-header nav ul li:hover {
+    text-decoration: underline;
+    background-color: #e9e9e9;
+}

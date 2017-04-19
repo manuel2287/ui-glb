@@ -1,0 +1,82 @@
+/**
+Promo styles
+*/
+
+.promo-content {
+    background-color: #e2e2e2;
+}
+
+.promo-image {
+    padding: 0;
+    margin: 0;
+    height: 298px;
+}
+
+.promo-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.short-promo-line,
+.long-promo-line {
+    margin: 0;
+    padding: 0;
+}
+
+.short-promo-line {
+    margin-top: 20px;
+}
+
+.short-promo-content {
+    padding: 32px 26px;
+    height: 185px;
+}
+
+.row.promo-content {
+    margin: 0;
+}
+
+.promo-info {
+    padding-top: 32px;
+}
+
+.promo-info p {
+    color: #767677;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 40px;
+}
+
+.promo-destination {
+    font-size: 22px;
+    margin: 0;
+}
+
+.promo-price {
+    font-size: 35px;
+    display: block;
+}
+
+.promo-purchase {
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+}
+
+.promo-purchase:hover {
+    text-decoration: underline;
+}
+
+.promo-origin,
+.promo-purchase-title {
+    color: #757575;
+    font-size: 14px;
+}
+
+.promo-origin {
+    font-weight: bolder;
+}
+
+.promo-purchase-title {
+    margin-top: 5px;
+}

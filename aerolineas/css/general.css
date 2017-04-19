@@ -1,0 +1,75 @@
+*,
+* ::after,
+* ::before {
+    box-sizing: border-box;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.left {
+    float: left;
+}
+
+.cols {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.md-6 {
+    width: 50%;
+}
+
+.md-12 {
+    width: 100%;
+}
+
+.md-3 {
+    width: 25%;
+}
+
+.md-9 {
+    width: 75%;
+}
+
+.md-12,
+.md-3,
+.md-6 .md-9 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+ul.display-inline li {
+    display: inline-block;
+}
+
+.container::after,
+.row::after {
+    clear: both;
+}
+
+.row::after,
+.row::before {
+    display: table;
+    content: " ";
+}
+
+.aa-color {
+    color: #0079ca;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.container {
+    width: 970px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
