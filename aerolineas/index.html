@@ -36,15 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row down-header">
-                <nav class="cols left md-12">
-                    <ul class="display-inline">
-                        <li><a>La empresa</a></li>
-                        <li><a>Reservas y servicios</a></li>
-                        <li><a>Info para tu viaje</a></li>
-                        <li><a>Aerolíneas Plus</a></li>
-                    </ul>
-                </nav>
+            <div id="aerolineas-menu" class="row down-header">
             </div>
         </div>
     </header>
@@ -122,6 +114,32 @@
             </div>
         </section>
     </main>
+    <script src="js/components/menu/MenuBarView.js">
+    </script>
+    <script>
+        var menu = new MenuBarView({
+            "type": "horizontal",
+            "el": "#aerolineas-menu",
+            "items": [{
+                "text": "La empresa",
+                "href": "http://www.google.com",
+                "target": "_blank"
+            }, {
+                "text": "Reservas y servicios",
+                "href": "#",
+                "target": "_self"
+            }, {
+                "text": "Info para tu viaje",
+                "href": "#",
+                "target": "_self"
+            }, {
+                "text": "Aerolíneas Plus",
+                "href": "#",
+                "target": "_self"
+            }]
+        });
+        menu.render();
+    </script>
 </body>
 
 </html>
