@@ -42,80 +42,19 @@
     </header>
     <main class="container">
         <section class="promos">
-            <div class="row long-promo-line">
-                <div class="cols left md-6">
-                    <div class="row promo-content">
-                        <div class="cols left md-6 promo-image">
-                            <img src="img/calafate.jpg" alt="Imagen el Calafate" />
-                        </div>
-                        <div class="cols left md-6 promo-info">
-                            <span class="promo-origin">Buenos Aires</span>
-                            <h2 class="aa-color promo-title promo-destination">El Calafate</h2>
-                            <p class="promo-description"> Llegá volando a El Calafate. Más rápido, más cómodo, más cuotas.</p>
-                            <span class="promo-purchase-title">Tarifa:</span>
-                            <span class="aa-color promo-price">$ 2.428</span>
-                            <a class="aa-color promo-purchase" href="/es-ar/reservasservicios/vuelo/147_buenos-aires-el-calafate">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cols left md-6">
-                    <div class="row promo-content">
-                        <div class="cols left md-6 promo-image">
-                            <img src="img/neuquen.gif" alt="Imagen el Calafate" />
-                        </div>
-                        <div class="cols left md-6 promo-info">
-                            <span class="promo-origin">Buenos Aires</span>
-                            <h2 class="aa-color promo-title promo-destination">Neuquén</h2>
-                            <p class="promo-description"> Volá a Neuquén y comprá con la mejor financiación con más de 30 bancos.</p>
-                            <span class="promo-purchase-title">Tarifa:</span>
-                            <span class="aa-color promo-price">$ 1.978</span>
-                            <a class="aa-color promo-purchase" href="/es-ar/reservasservicios/vuelo/147_buenos-aires-el-calafate">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row short-promo-line">
-                <div class="cols left md-3">
-                    <div class="short-promo-content promo-content">
-                        <span class="promo-origin">Buenos Aires</span>
-                        <h2 class="aa-color promo-title promo-destination">Mar del Plata</h2>
-                        <span class="promo-purchase-title">Tarifa:</span>
-                        <span class="aa-color promo-price">$ 1.242</span>
-                        <a class="aa-color promo-purchase" href="/es-ar/reservasservicios/vuelo/139_buenos-aires-mar-del-plata">Comprar</a>
-                    </div>
-                </div>
-                <div class="cols left md-3">
-                    <div class="short-promo-content promo-content">
-                        <span class="promo-origin">Buenos Aires</span>
-                        <h2 class="aa-color promo-title promo-destination">Córdoba</h2>
-                        <span class="promo-purchase-title">Tarifa:</span>
-                        <span class="aa-color promo-price">$ 1.675</span>
-                        <a class="aa-color promo-purchase" href="/es-ar/reservasservicios/vuelo/138_buenos-aires-cordoba">Comprar</a>
-                    </div>
-                </div>
-                <div class="cols left md-3">
-                    <div class="short-promo-content promo-content">
-                        <span class="promo-origin">Buenos Aires</span>
-                        <h2 class="aa-color promo-title promo-destination">Río Cuarto</h2>
-                        <span class="promo-purchase-title">Tarifa:</span>
-                        <span class="aa-color promo-price">$ 1.564</span>
-                        <a class="aa-color promo-purchase" href="/es-ar/reservasservicios/vuelo/1800_buenos-aires-rio-cuarto">Comprar</a>
-                    </div>
-                </div>
-                <div class="cols left md-3">
-                    <div class="short-promo-content promo-content">
-                        <span class="promo-origin">Buenos Aires</span>
-                        <h2 class="aa-color promo-title promo-destination">Tucumán</h2>
-                        <span class="promo-purchase-title">Tarifa:</span>
-                        <span class="aa-color promo-price">$ 2.300</span>
-                        <a class="aa-color promo-purchase" href="/es-ar/reservasservicios/vuelo/146_tucuman">Comprar</a>
-                    </div>
-                </div>
-            </div>
+            <div id="large-promos" class="row long-promo-line"></div>
+            <div id="short-promos" class="row short-promo-line"></div>
+        </section>
+        <section class="slider">
         </section>
     </main>
-    <script src="js/components/menu/MenuBarView.js">
-    </script>
+    <script src="js/utils/inherits.js"></script>
+    <script src="js/components/menu/MenuBarView.js"></script>
+    <script src="js/components/slider/SliderView.js"></script>
+    <script src="js/components/promos/Promo.js"></script>
+    <script src="js/components/promos/PromoView.js"></script>
+    <script src="js/components/promos/LargePromoView.js"></script>
+
     <script>
         var menu = new MenuBarView({
             "type": "horizontal",
@@ -139,6 +78,108 @@
             }]
         });
         menu.render();
+
+        var slider = new SliderView({
+            el: ".slider",
+            slides: [{
+                "index": 1,
+                "image": "https://www.w3schools.com/howto/img_nature_wide.jpg",
+                "text": "Nature Wide"
+
+            }, {
+                "index": 2,
+                "image": "https://www.w3schools.com/howto/img_fjords_wide.jpg",
+                "text": "Fjords Wide"
+
+            }, {
+                "index": 3,
+                "image": "https://www.w3schools.com/howto/img_lights_wide.jpg",
+                "text": "Lights Wide"
+
+            }, {
+                "index": 4,
+                "image": "https://www.w3schools.com/howto/img_mountains_wide.jpg",
+                "text": "Mountain"
+
+            }],
+            events: {
+                "click a.prev": "clickPrev",
+                "click a.next": "clickNext"
+            }
+        });
+        slider.render();
+
+        //app.js
+
+        //This the data I will fill the model
+        var promos = [{
+            "origin": "Buenos Aires",
+            "destination": "El Calafate",
+            "price": 1200,
+            "currency": "ARS",
+            "currencySymbol": "$"
+        }, {
+            "origin": "Buenos Aires",
+            "destination": "El Calafate",
+            "price": 1200,
+            "currency": "ARS",
+            "currencySymbol": "$"
+        }, {
+            "origin": "Buenos Aires",
+            "destination": "El Calafate",
+            "price": 1200,
+            "currency": "ARS",
+            "currencySymbol": "$"
+        }, {
+            "origin": "Buenos Aires",
+            "destination": "El Calafate",
+            "price": 1200,
+            "currency": "ARS",
+            "currencySymbol": "$"
+        }];
+
+        // Creating view to render
+        promos.forEach(promo => {
+            var promoView = new PromoView({
+                el: '#short-promos',
+                model: new Promo(promo)
+            });
+
+            //As I set attributes to the view I just render its content
+            promoView.render();
+        })
+
+        var largePromos = [{
+            "origin": "Buenos Aires",
+            "destination": "El Calafate",
+            "price": 1200,
+            "currency": "ARS",
+            "currencySymbol": "$",
+            "image": "img/neuquen.gif",
+            "text": "Volá a Neuquén y comprá con la mejor financiación con más de 30 bancos."
+        }, {
+            "origin": "Buenos Aires",
+            "destination": "El Calafate",
+            "price": 1200,
+            "currency": "ARS",
+            "currencySymbol": "$",
+            "image": "img/neuquen.gif",
+            "text": "Volá a Neuquén y comprá con la mejor financiación con más de 30 bancos."
+        }];
+
+        largePromos.forEach(promo => {
+            var promoView = new LargePromoView({
+                el: '#large-promos',
+                model: new Promo(promo)
+            });
+
+            //As I set attributes to the view I just render its content
+            promoView.render();
+        })
+
+        /**xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "index.tpl");
+        xmlhttp.send();*/
     </script>
 </body>
 

@@ -7,7 +7,6 @@
  */
 var Promo = function(attributes) {
     this.attributes = attributes;
-    this.initialize.apply(this, arguments);
 }
 
 /**

@@ -1,19 +1,3 @@
-/*var config = {
-    "type": "horizontal",
-    "el": "",
-    "class": ["", ""], //optional
-    "items": [{
-        "text": "",
-        "href": "",
-        "target": "",
-        "dropdown": [{ //optional
-            "text": "",
-            "href": "",
-            "target": ""
-        }]
-    }]
-}*/
-
 /**
  * 
  * @param {*object} configs 
@@ -51,6 +35,9 @@ MenuBarView.prototype = {
                 return previousValue + currentValue;
             }, "");
     },
+    /**
+     * 
+     */
     render: function() {
         let itemList = this.createItemList();
         let template = `<nav class="cols left md-12"> 
