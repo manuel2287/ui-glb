@@ -1,0 +1,59 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js">
+</script>
+<script>
+    var resp = axios.get("index.tpl").then(function(response) {
+        console.log(response);
+        return response;
+    });
+</script>
+<script>
+    /*var request = new XMLHttpRequest();
+                                                                                                                                                                                                                                    request.onreadystatechange = function(response) {
+                                                                                                                                                                                                                                        console.log(response);
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    request.open("GET", "index.tpl");
+                                                                                                                                                                                                                                    request.send(
+                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                fun*/
+
+    function ajax(url) {
+        return new Promise(function(resolve, reject) {
+            let request = new XMLHttpRequest();
+
+
+            request.open(url.method, url.url);
+
+            request.onload = function() {
+                if (request.status == 200) {
+                    console.log(request);
+                    resolve(request.response);
+                } else {
+                    reject(Error(request.statusText))
+                }
+            }
+
+            request.onerror = function() {
+                reject(Error("Network error"))
+            }
+
+            request.send();
+        });
+    }
+
+    let url = {
+        "method": "get",
+        "url": "index.tpl"
+    };
+
+    function calling() {
+        let res = null;
+        var req = ajax(url).then(function(response) {
+            console.log("resposne", response);
+            res = response;
+        }).catch(function(err) {
+            console.log(err)
+        });
+
+        return res;
+    }
+</script>
