@@ -1,0 +1,31 @@
+-  request:
+      url: /api/promos
+   response:
+      headers:
+         content-type: application/json
+      body: > 
+          [{
+                  "origin": "Buenos Aires",
+                  "destination": "El Calafate",
+                  "price": 1200,
+                  "currency": "ARS",
+                  "currencySymbol": "$"
+              }, {
+                  "origin": "Buenos Aires",
+                  "destination": "El Calafate",
+                  "price": 1200,
+                  "currency": "ARS",
+                  "currencySymbol": "$"
+              }, {
+                  "origin": "Buenos Aires",
+                  "destination": "El Calafate",
+                  "price": 1200,
+                  "currency": "ARS",
+                  "currencySymbol": "$"
+              }, {
+                  "origin": "Buenos Aires",
+                  "destination": "El Calafate",
+                  "price": 1200,
+                  "currency": "ARS",
+                  "currencySymbol": "$"
+              }]

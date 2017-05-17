@@ -1,28 +1,3 @@
-var slider = {
-
-    el: ".slider",
-    slides: [{
-        "index": 1,
-        "image": "https://www.w3schools.com/howto/img_nature_wide.jpg",
-        "text": ""
-
-    }, {
-        "index": 2,
-        "image": "https://www.w3schools.com/howto/img_fjords_wide.jpg",
-        "text": ""
-
-    }, {
-        "index": 3,
-        "image": "https://www.w3schools.com/howto/img_lights_wide.jpg",
-        "text": ""
-
-    }, {
-        "index": 4,
-        "image": "https://www.w3schools.com/howto/img_mountains_wide.jpg",
-        "text": ""
-
-    }]
-}
 var SliderView = function(configs) {
     this.configs = configs;
     this.$el = document.querySelector(configs.el);
@@ -89,3 +64,16 @@ SliderView.prototype = {
         }
     }
 }
+
+// blocking code 
+var fs = require('fs');
+var content = fs.open('file.txt');
+console.log(content);
+
+//non-blocking code
+
+var fs = require('fs');
+fs.open('text', function(data) {
+    console.log(data);
+});
+console.log("hola mundo");
