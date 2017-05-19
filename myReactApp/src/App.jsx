@@ -5,7 +5,14 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {appGetBusy,appGetReady} from './app-actions';
 
-import Home from './components/home/Home.jsx';
+import Header from './components/header/Header.jsx';
+import Footer from './components/footer/Footer.jsx';
+import Home from './containers/home/Home.jsx';
+import ClientServices from './containers/client-services/ClientServices.jsx';
+import FFP from './containers/ffp/FFP.jsx';
+import OptionalProducts from './containers/optional-products/OptionalProducts.jsx';
+import {Route, IndexRoute} from 'react-router';
+
 
 class App extends Component {
     componentWillMount() {
@@ -19,10 +26,12 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div className="app-style">
-                    Hello world
-                </div>
-                <Home name="Pepe"/>
+                <Header />
+                <Route exact path="/" component={Home} />
+                <Route path="/ffp" component={FFP} />
+                <Route path="/optional-products" component={OptionalProducts} />
+                <Route path="/client-services" component={ClientServices} />
+                <Footer />
             </div>
         )
     }
