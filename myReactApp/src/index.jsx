@@ -9,7 +9,7 @@ import Router from './Router.jsx';
 import {createBrowserHistory} from 'history';
 import {routerMiddleware} from 'react-router-redux';
 
-const logger = createLogger();
+const logger = createLogger({diff:true});
 const history = createBrowserHistory();
 const routing = routerMiddleware(history);
 const middleware = applyMiddleware(logger, ReduxThunk, routing)(createStore);
