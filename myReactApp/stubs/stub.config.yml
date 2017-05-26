@@ -5,3 +5,12 @@
       headers:
          content-type: application/json
       file: optionalProducts.json
+
+-  request:
+      url: /api/client-services
+      latency: 800000
+   response:
+      headers:
+         content-type: application/json
+      file: clientServices.json
+      
