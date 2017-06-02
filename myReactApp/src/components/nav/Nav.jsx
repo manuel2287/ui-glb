@@ -22,4 +22,4 @@ class Nav extends Component {
     }
 }
 
-export default connect()(Nav);
+export default Nav;

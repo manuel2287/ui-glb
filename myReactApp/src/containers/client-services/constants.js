@@ -1,4 +1,4 @@
 export const FETCH_CLIENT_SERVICES = "FETCH_CLIENT_SERVICES";
 export const RECEIVE_CLIENT_SERVICES = "RECEIVE_CLIENT_SERVICES";
 export const ERROR_ON_CALL_CLIENT_SERVICES = "ERROR_ON_CALL_CLIENT_SERVICES";
-export const CLIENT_SERVICES_API = "http://localhost:8882/api/client-services";
+export const CLIENT_SERVICES_API = "/api/client-services";

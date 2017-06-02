@@ -15,7 +15,7 @@ class OptionalProducts extends Component {
             <div>
                 {/*Slide show*/}
                 {/*Optional Products*/}
-                {this.props.isFetching && <div> loading ... </div>}
+                {this.props.isFetching && <div className="loading"> loading ... </div>}
                 Optional Products page
                 {this.props.products.length > 0 && <CardContainer cards={this.props.products} />}
             </div>
