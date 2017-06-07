@@ -4,10 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "serve-app": "webpack-dev-server",
+        "serve-app": "webpack-dev-server --env=dev",
+        "build:prod": "webpack --env=process.env.NODE_ENV --version=process.env.NODE_VERSION",
         "serve-stubs": "stubby -d stubs/stub.config.yml",
         "start": "npm run serve-stubs & npm run serve-app",
-        "test": "jest"
+        "test": "jest",
+        "install:prod": "npm install",
+        "release:prod": "npm run install:prod & npm run build:prod & npm run test",
+        "release:beta": "npm run install:prod & npm run build:prod & npm run test"
     },
     "author": "",
     "license": "ISC",
@@ -47,6 +51,7 @@
         "style-loader": "^0.17.0"
     },
     "jest": {
+        "bail": true,
         "transform": {
             ".*": "<rootDir>/node_modules/jest-css-modules"
         },
